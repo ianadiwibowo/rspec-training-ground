@@ -14,14 +14,14 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2018-05-13T00:10:09+07:00">2018-05-13T00:10:09+07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2018-05-13T01:06:01+07:00">2018-05-13T01:06:01+07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">97.64%</span></span>
+    (<span class="covered_percent"><span class="green">97.69%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
@@ -32,8 +32,8 @@
   <a name="AllFiles"></a>
   <div>
     <b>11</b> files in total.
-    <b>127</b> relevant lines. 
-    <span class="green"><b>124</b> lines covered</span> and
+    <b>130</b> relevant lines. 
+    <span class="green"><b>127</b> lines covered</span> and
     <span class="red"><b>3</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -87,7 +87,7 @@
         <td>5</td>
         <td>5</td>
         <td>0</td>
-        <td>4.2</td>
+        <td>3.8</td>
       </tr>
       
       <tr>
@@ -123,19 +123,19 @@
       <tr>
         <td class="strong"><a href="#18b794cf02b17d4718abd32a00203f92c9f0d9e3" class="src_link" title="spec/models/project_spec.rb">spec/models/project_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>26</td>
-        <td>17</td>
-        <td>17</td>
+        <td>38</td>
+        <td>22</td>
+        <td>22</td>
         <td>0</td>
-        <td>1.3</td>
+        <td>1.4</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#ed8c562bb6651ac6a8b11458d0382683ade5de41" class="src_link" title="spec/models/task_spec.rb">spec/models/task_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>14</td>
-        <td>9</td>
-        <td>9</td>
+        <td>12</td>
+        <td>7</td>
+        <td>7</td>
         <td>0</td>
         <td>1.4</td>
       </tr>
@@ -565,14 +565,14 @@
           <code class="ruby">  def welcome_email(user)</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="5">
-          <span class="hits">9</span>
+        <li class="covered" data-hits="8" data-linenumber="5">
+          <span class="hits">8</span>
           
           <code class="ruby">    @user = user</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="6">
-          <span class="hits">9</span>
+        <li class="covered" data-hits="8" data-linenumber="6">
+          <span class="hits">8</span>
           
           <code class="ruby">    mail(to: @user.email, subject: &quot;Welcome to Projects!&quot;)</code>
         </li>
@@ -902,8 +902,8 @@
     <h3>spec/models/project_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>17</b> relevant lines. 
-      <span class="green"><b>17</b> lines covered</span> and
+      <b>22</b> relevant lines. 
+      <span class="green"><b>22</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -929,34 +929,34 @@
           <code class="ruby">RSpec.describe Project, type: :model do</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="4">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
           
-          <code class="ruby">  it { is_expected.to belong_to(:owner) }</code>
+          <code class="ruby">  describe &#39;associations&#39; do</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="5">
           <span class="hits">2</span>
           
-          <code class="ruby">  it { is_expected.to have_many(:notes) }</code>
+          <code class="ruby">    it { is_expected.to belong_to(:owner).class_name(&#39;User&#39;) }</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="6">
           <span class="hits">2</span>
           
-          <code class="ruby">  it { is_expected.to have_many(:tasks) }</code>
+          <code class="ruby">    it { is_expected.to have_many(:notes) }</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="7">
           <span class="hits">2</span>
           
-          <code class="ruby">  it { is_expected.to validate_presence_of(:name) }</code>
+          <code class="ruby">    it { is_expected.to have_many(:tasks) }</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="8">
-          <span class="hits">2</span>
+        <li class="never" data-hits="" data-linenumber="8">
           
-          <code class="ruby">  it { is_expected.to validate_uniqueness_of(:name).scoped_to(:user_id) }</code>
+          
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="9">
@@ -968,85 +968,85 @@
         <li class="covered" data-hits="1" data-linenumber="10">
           <span class="hits">1</span>
           
-          <code class="ruby">  describe &#39;late status&#39; do</code>
+          <code class="ruby">  describe &#39;validations&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="11">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="11">
+          <span class="hits">2</span>
           
-          <code class="ruby">    it &#39;is late when the due date is past today&#39; do</code>
+          <code class="ruby">    it { is_expected.to validate_presence_of(:name) }</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="12">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="12">
+          <span class="hits">2</span>
           
-          <code class="ruby">      project = FactoryBot.create(:project, :due_yesterday)</code>
+          <code class="ruby">    it { is_expected.to validate_uniqueness_of(:name).scoped_to(:user_id) }</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="13">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="13">
           
-          <code class="ruby">      expect(project).to be_late</code>
+          
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="14">
           
           
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="15">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="16">
+        <li class="covered" data-hits="1" data-linenumber="15">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;is on time when the due date is today&#39; do</code>
+          <code class="ruby">  describe &#39;#late?&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="17">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="16">
+          <span class="hits">2</span>
           
-          <code class="ruby">      project = FactoryBot.create(:project, :due_today)</code>
+          <code class="ruby">    let(:project1) { FactoryBot.build(:project, :due_yesterday) }</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="18">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="17">
+          <span class="hits">2</span>
           
-          <code class="ruby">      expect(project).to_not be_late</code>
+          <code class="ruby">    let(:project2) { FactoryBot.build(:project, :due_today) }</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="18">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    let(:project3) { FactoryBot.build(:project, :due_tomorrow) }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="19">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="20">
+        <li class="covered" data-hits="1" data-linenumber="20">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">    context &#39;when due date is in the past&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="21">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;is on time when the due date is in the future&#39; do</code>
+          <code class="ruby">      it &#39;returns true&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="22">
           <span class="hits">1</span>
           
-          <code class="ruby">      project = FactoryBot.create(:project, :due_tomorrow)</code>
+          <code class="ruby">        expect(project1).to be_late</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="23">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="23">
           
-          <code class="ruby">      expect(project).to_not be_late</code>
+          
+          <code class="ruby">      end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="24">
@@ -1058,10 +1058,82 @@
         <li class="never" data-hits="" data-linenumber="25">
           
           
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="26">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    context &#39;when due date is today&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="27">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      it &#39;returns false&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="28">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        expect(project2).to_not be_late</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="29">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="31">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="32">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    context &#39;when due date is in the future&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="33">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      it &#39;returns false&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="34">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        expect(project3).to_not be_late</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="35">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="36">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="37">
+          
+          
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="26">
+        <li class="never" data-hits="" data-linenumber="38">
           
           
           <code class="ruby">end</code>
@@ -1077,8 +1149,8 @@
     <h3>spec/models/task_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>9</b> relevant lines. 
-      <span class="green"><b>9</b> lines covered</span> and
+      <b>7</b> relevant lines. 
+      <span class="green"><b>7</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -1104,67 +1176,55 @@
           <code class="ruby">RSpec.describe Task, type: :model do</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="4">
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  describe &#39;associations&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="5">
           <span class="hits">2</span>
           
-          <code class="ruby">  let(:project) { FactoryBot.create(:project) }</code>
+          <code class="ruby">    it { is_expected.to belong_to(:project) }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="5">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="6">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  it &#39;is valid with a project and name&#39; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="7">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    task = Task.new(project: project, name: &#39;Test task&#39;)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="8">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    expect(task).to be_valid</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="9">
+        <li class="never" data-hits="" data-linenumber="6">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="10">
+        <li class="never" data-hits="" data-linenumber="7">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="11">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
           
-          <code class="ruby">  it { is_expected.to belong_to :project }</code>
+          <code class="ruby">  describe &#39;validations&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="12">
+        <li class="covered" data-hits="2" data-linenumber="9">
           <span class="hits">2</span>
           
-          <code class="ruby">  it { is_expected.to validate_presence_of :project }</code>
+          <code class="ruby">    it { is_expected.to validate_presence_of(:project) }</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="13">
+        <li class="covered" data-hits="2" data-linenumber="10">
           <span class="hits">2</span>
           
-          <code class="ruby">  it { is_expected.to validate_presence_of :name }</code>
+          <code class="ruby">    it { is_expected.to validate_presence_of(:name) }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="14">
+        <li class="never" data-hits="" data-linenumber="11">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
           
           
           <code class="ruby">end</code>

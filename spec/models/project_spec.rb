@@ -1,26 +1,38 @@
 require 'rails_helper'
 
 RSpec.describe Project, type: :model do
-  it { is_expected.to belong_to(:owner) }
-  it { is_expected.to have_many(:notes) }
-  it { is_expected.to have_many(:tasks) }
-  it { is_expected.to validate_presence_of(:name) }
-  it { is_expected.to validate_uniqueness_of(:name).scoped_to(:user_id) }
+  describe 'associations' do
+    it { is_expected.to belong_to(:owner).class_name('User') }
+    it { is_expected.to have_many(:notes) }
+    it { is_expected.to have_many(:tasks) }
+  end
 
-  describe 'late status' do
-    it 'is late when the due date is past today' do
-      project = FactoryBot.create(:project, :due_yesterday)
-      expect(project).to be_late
+  describe 'validations' do
+    it { is_expected.to validate_presence_of(:name) }
+    it { is_expected.to validate_uniqueness_of(:name).scoped_to(:user_id) }
+  end
+
+  describe '#late?' do
+    let(:project1) { FactoryBot.build(:project, :due_yesterday) }
+    let(:project2) { FactoryBot.build(:project, :due_today) }
+    let(:project3) { FactoryBot.build(:project, :due_tomorrow) }
+
+    context 'when due date is in the past' do
+      it 'returns true' do
+        expect(project1).to be_late
+      end
     end
 
-    it 'is on time when the due date is today' do
-      project = FactoryBot.create(:project, :due_today)
-      expect(project).to_not be_late
+    context 'when due date is today' do
+      it 'returns false' do
+        expect(project2).to_not be_late
+      end
     end
 
-    it 'is on time when the due date is in the future' do
-      project = FactoryBot.create(:project, :due_tomorrow)
-      expect(project).to_not be_late
+    context 'when due date is in the future' do
+      it 'returns false' do
+        expect(project3).to_not be_late
+      end
     end
   end
 end
