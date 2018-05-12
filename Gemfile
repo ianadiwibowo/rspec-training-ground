@@ -21,7 +21,8 @@ gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'factory_girl_rails', '~> 4.8.0'
+  gem 'codecov', require: false
+  gem 'factory_bot_rails', '~> 4.8.0'
   gem 'rspec-rails', '~> 3.6.0'
 end
 
