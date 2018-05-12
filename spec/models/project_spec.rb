@@ -13,24 +13,23 @@ RSpec.describe Project, type: :model do
   end
 
   describe '#late?' do
-    let(:project1) { FactoryBot.build(:project, :due_yesterday) }
-    let(:project2) { FactoryBot.build(:project, :due_today) }
-    let(:project3) { FactoryBot.build(:project, :due_tomorrow) }
-
     context 'when due date is in the past' do
       it 'returns true' do
+        project1 = build_stubbed(:project, :due_yesterday)
         expect(project1).to be_late
       end
     end
 
     context 'when due date is today' do
       it 'returns false' do
+        project2 = build_stubbed(:project, :due_today)
         expect(project2).to_not be_late
       end
     end
 
     context 'when due date is in the future' do
       it 'returns false' do
+        project3 = build_stubbed(:project, :due_tomorrow)
         expect(project3).to_not be_late
       end
     end

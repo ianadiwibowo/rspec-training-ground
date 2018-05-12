@@ -8,14 +8,22 @@ RSpec.describe Note, type: :model do
 
   describe 'validations' do
     it { is_expected.to validate_presence_of(:message) }
+    it { is_expected.to have_attached_file(:attachment) }
+  end
+
+  describe '.user_name' do
+    it 'delegates name to the user who created it' do
+      user = instance_double(User, name: 'Fake User')
+      note = Note.new
+      allow(note).to receive(:user).and_return(user)
+      expect(note.user_name).to eq('Fake User')
+    end
   end
 
   describe '.search' do
-    let(:user) { FactoryBot.create(:user) }
-    let(:project) { FactoryBot.create(:project, owner: user) }
-    let(:note1) { FactoryBot.create(:note, project: project, message: 'This is the first note') }
-    let(:note2) { FactoryBot.create(:note, project: project, message: 'This is the second note') }
-    let(:note3) { FactoryBot.create(:note, project: project, message: 'First, preheat the oven') }
+    let(:note1) { create(:note, message: 'This is the first note') }
+    let(:note2) { create(:note, message: 'This is the second note') }
+    let(:note3) { create(:note, message: 'First, preheat the oven') }
 
     context 'when a match is found' do
       it 'returns notes that match the search term' do

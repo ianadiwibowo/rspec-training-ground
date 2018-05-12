@@ -3,6 +3,8 @@ require 'spec_helper'
 require 'rspec/rails'
 require 'simplecov'
 require 'capybara/rspec'
+require 'supports/factory_bot'
+require 'paperclip/matchers'
 
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
@@ -17,6 +19,7 @@ RSpec.configure do |config|
   config.use_transactional_fixtures = true
   config.infer_spec_type_from_file_location!
   config.filter_rails_from_backtrace!
+  config.include Paperclip::Shoulda::Matchers
 end
 
 Shoulda::Matchers.configure do |config|
