@@ -24,6 +24,7 @@ group :development, :test do
   gem 'codecov', require: false
   gem 'factory_bot_rails', '~> 4.8.0'
   gem 'rspec-rails', '~> 3.6.0'
+  gem 'shoulda-matchers'
 end
 
 group :development do
@@ -40,7 +41,6 @@ group :test do
   gem 'chromedriver-helper'
   gem 'launchy', '~> 2.4.3'
   gem 'selenium-webdriver'
-  gem 'shoulda-matchers'
   gem 'vcr'
   gem 'webmock'
 end
