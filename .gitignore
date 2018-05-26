@@ -24,7 +24,9 @@
 /yarn-error.log
 
 /public/assets
+/publis/system
 .byebug_history
+/spec/test_uploads
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
